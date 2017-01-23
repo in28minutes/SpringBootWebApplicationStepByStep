@@ -22,6 +22,13 @@ public class LoginController {
 
 }
 ```
+### src/main/resources/application.properties
+
+```
+logging.level.=debug
+```
+
+
 ## Exercises
 - Create another method with a different mapping returning some other text!
 
