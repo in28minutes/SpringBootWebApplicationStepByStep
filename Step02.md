@@ -25,7 +25,7 @@ public class LoginController {
 ### src/main/resources/application.properties
 
 ```
-logging.level.=debug
+logging.level.org.springframework.web: DEBUG
 ```
 
 
@@ -130,7 +130,7 @@ public class SpringBootFirstWebApplication {
 ### src/main/resources/application.properties
 
 ```
-logging.level.=debug
+logging.level.org.springframework.web: DEBUG
 ```
 ---
 ### src/test/java/com/in28minutes/springboot/web/SpringBootFirstWebApplicationTests.java
