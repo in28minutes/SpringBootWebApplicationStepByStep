@@ -87,7 +87,13 @@ We do NOT interact with a Database in this Beginner’s Course.
   - or take a test drive by using the Free Preview feature.  
 - See you in the course!
 
-##About in28Minutes
+## Getting Started
+- Eclipse - https://www.youtube.com/watch?v=s4ShbtOHMCA
+- Maven - https://www.youtube.com/watch?v=0CFWeVgzsqY
+- JUnit - https://www.youtube.com/watch?v=o5k9NOR9lrI
+- Mockito - https://www.youtube.com/watch?v=d2KwvXQgQx4
+
+## About in28Minutes
 - At in28Minutes, we ask ourselves one question everyday. How do we help you learn effectively - that is more quickly and retain more of what you have learnt?
 - We use Problem-Solution based Step-By-Step Hands-on Approach With Practical, Real World Application Examples. 
 - Our success on Udemy and Youtube (2 Million Views & 12K Subscribers) speaks volumes about the success of our approach.
