@@ -4,7 +4,6 @@
 - There is a lot of magic happening in here! We will take a deep dive into the magic in Step 03. 
 
 ## Files List
-## Files List
 
 ### pom.xml
 
@@ -63,6 +62,7 @@
 
 </project>
 ```
+---
 ### src/main/java/com/in28minutes/springboot/web/SpringBootFirstWebApplication.java
 
 ```java
@@ -79,10 +79,12 @@ public class SpringBootFirstWebApplication {
 	}
 }
 ```
+---
 ### src/main/resources/application.properties
 
 ```
 ```
+---
 ### src/test/java/com/in28minutes/springboot/web/SpringBootFirstWebApplicationTests.java
 
 ```java
@@ -103,6 +105,7 @@ public class SpringBootFirstWebApplicationTests {
 
 }
 ```
+---
 ### todo.txt
 
 ```
@@ -111,3 +114,4 @@ Spring Boot Starter Web
 @SpringBootApplication
 Auto Configuration
 ```
+---
