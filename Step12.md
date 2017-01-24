@@ -12,67 +12,76 @@ First Snippet
 ```
 
 ## Files List
-### /pom.xml
-```
+
+### pom.xml
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>com.in28minutes.springboot.web</groupId>
-    <artifactId>Spring-Boot-First-Web-Application</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.4.0.RELEASE</version>
-    </parent>
+	<groupId>com.in28minutes.springboot.web</groupId>
+	<artifactId>spring-boot-first-web-application</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 
-    <dependencies>
+	<name>spring-boot-first-web-application</name>
+	<description>Demo project for Spring Boot</description>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.4.3.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-tomcat</artifactId>
-            <scope>provided</scope>
-        </dependency>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+	</properties>
 
-        <dependency>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		
+		<dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-jasper</artifactId>
             <scope>provided</scope>
         </dependency>
-        
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <optional>true</optional>
-        </dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
 
-
-    </dependencies>
-
-    <properties>
-        <java.version>1.8</java.version>
-    </properties>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>
 ```
-### /src/main/java/com/in28minutes/springboot/web/controller/LoginController.java
-```
+---
+### src/main/java/com/in28minutes/springboot/web/controller/LoginController.java
+
+```java
 package com.in28minutes.springboot.web.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -85,46 +94,40 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.in28minutes.springboot.web.service.LoginService;
 
-/*
- * Browser sends Http Request to Web Server
- *
- * Code in Web Server => Input:HttpRequest, Output: HttpResponse
- * JEE with Servlets
- *
- * Web Server responds with Http Response
- */
-
 @Controller
 @SessionAttributes("name")
 public class LoginController {
-
-    @Autowired
-    private LoginService service;
-
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String showLoginPage(ModelMap model) {
-        return "login";
-    }
-
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String handleLogin(ModelMap model, @RequestParam String name,
-            @RequestParam String password) {
-
-        boolean isValidUser = service.validateUser(name, password);
-
-        if (isValidUser) {
-            model.put("name", name);
-            return "welcome";
-        } else {
-            model.put("errorMessage", "Invalid Credentials!!");
-            return "login";
-        }
-    }
+	
+	@Autowired
+	LoginService service;
+	
+	@RequestMapping(value="/login", method = RequestMethod.GET)
+	public String showLoginPage(ModelMap model){
+		return "login";
+	}
+	
+	@RequestMapping(value="/login", method = RequestMethod.POST)
+	public String showWelcomePage(ModelMap model, @RequestParam String name, @RequestParam String password){
+		
+		boolean isValidUser = service.validateUser(name, password);
+		
+		if (!isValidUser) {
+			model.put("errorMessage", "Invalid Credentials");
+			return "login";
+		}
+		
+		model.put("name", name);
+		model.put("password", password);
+		
+		return "welcome";
+	}
 
 }
 ```
-### /src/main/java/com/in28minutes/springboot/web/controller/TodoController.java
-```
+---
+### src/main/java/com/in28minutes/springboot/web/controller/TodoController.java
+
+```java
 package com.in28minutes.springboot.web.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -132,27 +135,31 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import com.in28minutes.springboot.web.service.LoginService;
 import com.in28minutes.springboot.web.service.TodoService;
 
 @Controller
 @SessionAttributes("name")
 public class TodoController {
-
-    @Autowired
-    private TodoService service;
-
-    @RequestMapping(value = "/list-todos", method = RequestMethod.GET)
-    public String showTodoPage(ModelMap model) {
-        String user = (String) model.get("name");
-        model.addAttribute("todos", service.retrieveTodos(user));
-        return "list-todos";
-    }
+	
+	@Autowired
+	TodoService service;
+	
+	@RequestMapping(value="/list-todos", method = RequestMethod.GET)
+	public String showTodos(ModelMap model){
+		String name = (String) model.get("name");
+		model.put("todos", service.retrieveTodos(name));
+		return "list-todos";
+	}
 }
 ```
-### /src/main/java/com/in28minutes/springboot/web/model/Todo.java
-```
+---
+### src/main/java/com/in28minutes/springboot/web/model/Todo.java
+
+```java
 package com.in28minutes.springboot.web.model;
 
 import java.util.Date;
@@ -249,21 +256,30 @@ public class Todo {
 
 }
 ```
-### /src/main/java/com/in28minutes/springboot/web/service/LoginService.java
-```
+---
+### src/main/java/com/in28minutes/springboot/web/service/LoginService.java
+
+```java
 package com.in28minutes.springboot.web.service;
 
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class LoginService {
-    public boolean validateUser(String user, String password) {
-        return user.equalsIgnoreCase("in28Minutes") && password.equals("dummy");
-    }
+
+	public boolean validateUser(String userid, String password) {
+		// in28minutes, dummy
+		return userid.equalsIgnoreCase("in28minutes")
+				&& password.equalsIgnoreCase("dummy");
+	}
+
 }
 ```
-### /src/main/java/com/in28minutes/springboot/web/service/TodoService.java
-```
+---
+### src/main/java/com/in28minutes/springboot/web/service/TodoService.java
+
+```java
 package com.in28minutes.springboot.web.service;
 
 import java.util.ArrayList;
@@ -314,62 +330,145 @@ public class TodoService {
     }
 }
 ```
-### /src/main/java/com/in28minutes/springboot/web/WebApplication.java
-```
+---
+### src/main/java/com/in28minutes/springboot/web/SpringBootFirstWebApplication.java
+
+```java
 package com.in28minutes.springboot.web;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-public class WebApplication {
+@ComponentScan("com.in28minutes.springboot.web")
+public class SpringBootFirstWebApplication {
 
-    public static void main(String[] args) {
-        ApplicationContext ctx = SpringApplication.run(WebApplication.class, args);
-    }
+	public static void main(String[] args) {
+		SpringApplication.run(SpringBootFirstWebApplication.class, args);
+	}
 }
 ```
-### /src/main/resources/application.properties
+---
+### src/main/resources/application.properties
+
 ```
-spring.mvc.view.prefix: /WEB-INF/jsp/
-spring.mvc.view.suffix: .jsp
-logging.level.: INFO
+spring.mvc.view.prefix=/WEB-INF/jsp/
+spring.mvc.view.suffix=.jsp
+logging.level.org.springframework.web=DEBUG
 ```
-### /src/main/webapp/WEB-INF/jsp/list-todos.jsp
-```
-<html>
-<head>
-<title>Todos for ${name}</title>
-</head>
-<body>
-<H1>Your Todos</H1>
- ${todos}
-</body>
-</html>
-```
-### /src/main/webapp/WEB-INF/jsp/login.jsp
+---
+### src/main/webapp/WEB-INF/jsp/list-todos.jsp
+
 ```
 <html>
+
 <head>
-<title>Yahoo!!</title>
+<title>First Web Application</title>
 </head>
+
 <body>
-<form action="/login" method="POST">
-		<p><font color="red">${errorMessage}</font></p>
-        Name : <input name="name" type="text" /> Password : <input name="password" type="password" /> <input type="submit" />
-</form>
+	Here are the list of your todos:
+	${todos} 
+	<BR/>
+	Your Name is : ${name}
 </body>
+
 </html>
 ```
-### /src/main/webapp/WEB-INF/jsp/welcome.jsp
+---
+### src/main/webapp/WEB-INF/jsp/login.jsp
+
 ```
 <html>
+
 <head>
-<title>Yahoo!!</title>
+<title>First Web Application</title>
 </head>
+
 <body>
-Welcome ${name}. You are now authenticated. <a href="/list-todos">Click here</a> to start maintaining your todo's.
+	<font color="red">${errorMessage}</font>
+	<form method="post">
+		Name : <input type="text" name="name" />
+		Password : <input type="password" name="password" /> 
+		<input type="submit" />
+	</form>
 </body>
+
 </html>
 ```
+---
+### src/main/webapp/WEB-INF/jsp/welcome.jsp
+
+```
+<html>
+
+<head>
+<title>First Web Application</title>
+</head>
+
+<body>
+	Welcome ${name}!! <a href="/list-todos">Click here</a> to manage your todo's.
+</body>
+
+</html>
+```
+---
+### src/test/java/com/in28minutes/springboot/web/SpringBootFirstWebApplicationTests.java
+
+```java
+package com.in28minutes.springboot.web;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class SpringBootFirstWebApplicationTests {
+
+	@Test
+	public void contextLoads() {
+	}
+
+}
+```
+---
+### todo.txt
+
+```
+LoginController -> adds name to model
+welcome.jsp -> shows ${name}
+
+TodoController -> redirects to list-todos.jsp
+${name} is empty 
+
+
+Component, Service, Repository, Controller
+Autowired
+ComponentScan
+
+Field dummyService in com.in28minutes.springboot.web.controller.LoginController 
+required a bean of type 'com.in28minutes.dummy.DummyService' 
+that could not be found.
+
+Spring Boot Starter Parent
+Spring Boot Starter Web
+@SpringBootApplication
+Auto Configuration
+
+Dispatcher Servlet
+
+/login => "login"
+
+"login" => src/main/webapp/WEB-INF/jsp/login.jsp 
+
+
+Search for a view named "login"
+
+
+
+/login => LoginController 
+```
+---

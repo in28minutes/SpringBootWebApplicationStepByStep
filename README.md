@@ -8,13 +8,13 @@ Develop your first web application with Spring Boot in more than 25 steps
   - [Find Us](#useful-links)
   - [Other Courses](#other-courses)
 
-##Installing Tools
+## Installing Tools
 - PDF : https://github.com/in28minutes/SpringIn28Minutes/blob/master/InstallationGuide-JavaEclipseAndMaven_v2.pdf
 - Video : https://www.youtube.com/watch?v=DLPjCZ5n_SM
 
-##Course Overview
+## Course Overview
 
-###Introduction
+### Introduction
 Developing your first Spring Boot Web Application is fun.
 
 Spring Boot makes it easy to create stand-alone, production-grade Spring based Applications that you can “just run”. We take an opinionated view of the Spring platform and third-party libraries so you can get started with minimum fuss. Most Spring Boot applications need very little Spring configuration.
@@ -37,7 +37,6 @@ You will learn about
 - Spring Security
 - Internationalization
 - Exception Handling
-- Basic REST Services
 
 ###Step wise details
 - Step 01: Basic Spring Boot Web Application Setup
@@ -65,9 +64,9 @@ You will learn about
 - Step 23: Initial Spring Security Setup
 - Step 24: Refactor and add Logout Functionality using Spring Security
 - Step 25: Exception Handling
-- Step 26: Basic Spring Rest Services - @RestController and jackson-databind
-- Step 27: More Rest Services - @PathVariable
+---
 We do NOT interact with a Database in this Beginner’s Course. 
+---
 
 ###Expectations
 - You should know Java. You should understand usage of Annotations.
