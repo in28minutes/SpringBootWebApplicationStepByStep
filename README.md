@@ -32,10 +32,9 @@ You will learn about
 - Basic Todo Management Application with Login/Logout
 - Model, Controllers, ViewResolver and Filters
 - Forms - DataBinding, Validation
-- Annotation based approach - @RequestParam, @PathVariable, @ModelAttribute, @SessionAttributes etc
+- Annotation based approach - @RequestParam, @ModelAttribute, @SessionAttributes etc
 - Bootstrap to style the page
 - Spring Security
-- Internationalization
 - Exception Handling
 
 ###Step wise details
@@ -64,20 +63,21 @@ You will learn about
 - Step 23: Initial Spring Security Setup
 - Step 24: Refactor and add Logout Functionality using Spring Security
 - Step 25: Exception Handling
+
 ---
-We do NOT interact with a Database in this Beginner’s Course. 
+We do NOT interact with a Database in this Beginner’s Course.
+We will be building a traditional JSP based web application in this course. 
 ---
 
 ###Expectations
 - You should know Java. You should understand usage of Annotations.
 - You should understand the basics of Spring framework.
-- A basic understanding of JPA, Spring Security will be useful.
 - You are NOT expected to have any experience with Eclipse or Maven.
 - We will help you install Eclipse and get up and running with Maven.
 
 ##Let's have some fun
 - What are we waiting for?
-- Let's have some fun with Spring Boot in 25 Steps.
+- Let's have some fun building a web application Spring Boot in 25 Steps.
 - I had fun creating this course and hope you would too.
 - Thanks for your interest in Our Course 
   - I hope you’re as excited as I am!  
