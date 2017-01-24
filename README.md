@@ -65,8 +65,10 @@ You will learn about
 - Step 25: Exception Handling
 
 ---
-We do NOT interact with a Database in this Beginner’s Course.
-We will be building a traditional JSP based web application in this course. 
+
+- We do NOT interact with a Database in this Beginner’s Course.
+- We will be building a traditional JSP based web application in this course. 
+
 ---
 
 ###Expectations
