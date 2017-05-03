@@ -1,4 +1,4 @@
-##What You Will Learn during this Step:
+## What You Will Learn during this Step:
 - @RequestMapping(value = "/login", method = RequestMethod.GET)
 - http://localhost:8080/login
 - Why @ResponseBody?

@@ -1,4 +1,4 @@
-##What You Will Learn during this Step:
+## What You Will Learn during this Step:
 - Lets get the name from the user in a form
 
 ## Useful Snippets and References

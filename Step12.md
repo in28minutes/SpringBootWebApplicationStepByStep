@@ -1,4 +1,4 @@
-##What You Will Learn during this Step:
+## What You Will Learn during this Step:
 - Session vs Model vs Request.
 - Be cautious about what you use Session for.
 - @SessionAttributes("name") and how it works?

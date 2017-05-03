@@ -1,4 +1,4 @@
-##What we will do:
+## What we will do:
 - Basic Spring Rest Services.
 - We use com.fasterxml.jackson.core:jackson-databind
 - http://localhost:8080/rest/todos

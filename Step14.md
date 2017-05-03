@@ -1,9 +1,9 @@
-##What we will do:
+## What we will do:
 - Display Todos in a table using JSTL Tags
 - <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 - Add Dependency for jstl
 
-##Snippet
+## Snippet
 ```       
        <dependency>
             <groupId>javax.servlet</groupId>

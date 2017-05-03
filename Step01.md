@@ -1,4 +1,4 @@
-##What You Will Learn during this Step:
+## What You Will Learn during this Step:
 - Lets create a simple web application using Spring Boot
 - Lets run the Spring Boot Application
 - There is a lot of magic happening in here! We will take a deep dive into the magic in Step 03. 

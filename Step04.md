@@ -1,4 +1,4 @@
-##What You Will Learn during this Step:
+## What You Will Learn during this Step:
 - Your First JSP
  - There is a bit of setup before we get there!
 - Introduction to View Resolver

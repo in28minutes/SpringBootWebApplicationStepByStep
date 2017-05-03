@@ -1,4 +1,4 @@
-##What we will do:
+## What we will do:
 - Add bootstrap to give basic formatting to the page : We use bootstrap classes container,table and table-striped.
 - We will use webjars
  - Already auto configured by Spring Boot : o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
