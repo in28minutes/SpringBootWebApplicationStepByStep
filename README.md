@@ -10,7 +10,8 @@ Develop your first web application with Spring Boot in more than 25 steps
 
 ## Installing Tools
 - PDF : https://github.com/in28minutes/SpringIn28Minutes/blob/master/InstallationGuide-JavaEclipseAndMaven_v2.pdf
-- Video : https://www.youtube.com/watch?v=DLPjCZ5n_SM
+- Video : https://www.youtube.com/playlist?list=PLBBog2r6uMCSmMVTW_QmDLyASBvovyAO3
+- GIT Repository : https://github.com/in28minutes/getting-started-in-5-steps
 
 ## Course Overview
 
