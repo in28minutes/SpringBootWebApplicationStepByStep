@@ -90,10 +90,10 @@ You will learn about
 - See you in the course!
 
 ## Getting Started
-- Eclipse - https://www.youtube.com/watch?v=s4ShbtOHMCA
-- Maven - https://www.youtube.com/watch?v=0CFWeVgzsqY
-- JUnit - https://www.youtube.com/watch?v=o5k9NOR9lrI
-- Mockito - https://www.youtube.com/watch?v=d2KwvXQgQx4
+- Eclipse - https://courses.in28minutes.com/p/eclipse-tutorial-for-beginners
+- Maven - https://courses.in28minutes.com/p/maven-tutorial-for-beginners-in-5-steps
+- JUnit - https://courses.in28minutes.com/p/junit-tutorial-for-beginners
+- Mockito - https://courses.in28minutes.com/p/mockito-for-beginner-in-5-steps
 
 ## About in28Minutes
 - At in28Minutes, we ask ourselves one question everyday. How do we help you learn effectively - that is more quickly and retain more of what you have learnt?
@@ -114,7 +114,7 @@ You will learn about
 
 ### Other Courses
 
-- [Most Watched Courses on YouTube - 30,000 Subscribers](https://www.youtube.com/watch?v=bNFoN956P2A&list=PLBBog2r6uMCQhZaQ9vUT5zJWXzz-f49k1)
+- [Check out all our courses with 100,000 Students](https://courses.in28minutes.com/courses)
 - [25 Videos and Articles for Beginners on Spring Boot](http://www.springboottutorial.com/spring-boot-tutorials-for-beginners)
 - Our Best Courses with 66,000 Students and 4,000 5-Star Ratings
   * [Java Interview Guide : 200+ Interview Questions and Answers](https://www.udemy.com/java-interview-questions-and-answers/?couponCode=JAVA_INTER_GIT)
